@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://wey3ylyvurcx"]
+
+[ext_resource type="Script" path="res://scripts/World.gd" id="1_it716"]
+[ext_resource type="Script" path="res://scripts/DevTools.gd" id="5_q4ru1"]
+[ext_resource type="PackedScene" path="res://assets/HLabel.tscn" id="6_lxeqx"]
+[ext_resource type="Script" path="res://scripts/Controller.gd" id="7_io5tc"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_it716")
+
+[node name="DevTools" type="Node3D" parent="."]
+script = ExtResource("5_q4ru1")
+
+[node name="VLabelStack" type="VBoxContainer" parent="DevTools"]
+
+[node name="HLabel" parent="DevTools/VLabelStack" instance=ExtResource("6_lxeqx")]
+layout_mode = 2
+
+[node name="HLabelStack" type="HBoxContainer" parent="DevTools"]
+
+[node name="Label" type="Label" parent="DevTools/HLabelStack"]
+visible = false
+layout_mode = 2
+text = "Label #1"
+
+[node name="Label2" type="Label" parent="DevTools/HLabelStack"]
+visible = false
+layout_mode = 2
+text = "Label #1"
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.971652, 0.236414, 0, -0.236414, 0.971652, 0, 20.0847, 35.4233)
+current = true
+
+[node name="Controller" type="Node3D" parent="."]
+script = ExtResource("7_io5tc")
